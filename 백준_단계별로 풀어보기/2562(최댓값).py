@@ -1,6 +1,7 @@
 import sys
 
 input = sys.stdin.readline
+
 numbers = []
 
 for i in range(9):
