@@ -2,11 +2,11 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
-score = 0
-result = 0
 
 for i in range(n):
     input_list = list(input())
+    score = 0
+    result = 0
     for j in input_list:
         if j == 'O':
             score += 1
@@ -14,4 +14,3 @@ for i in range(n):
             score = 0
         result += score
     print(result)
-    result = 0
