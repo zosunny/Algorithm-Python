@@ -8,4 +8,5 @@ for i in range(t):
     for x in range(k):
         for y in range(1, n):
             people[y] += people[y-1]
+            print(people)
     print(people[-1])
