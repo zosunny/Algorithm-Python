@@ -11,5 +11,3 @@ m, n = map(int, input().split())
 for i in range(m, n+1):
     if isPrime(i):
         print(i)
-
-print(int(4**0.5)+1)
