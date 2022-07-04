@@ -8,3 +8,5 @@ for i in range(1, n+1):
         result = i
         break
 print(result)
+
+# 1의 경우 생성자가 존재하지 않아 result의 초기값 0이 출력된다.
