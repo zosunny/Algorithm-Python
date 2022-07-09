@@ -5,7 +5,6 @@ for _ in range(n):
     dots.append((x, y))
 
 dots.sort(key=lambda i: (i[0], i[1]))
-# dots.sort()
 
 for x, y in dots:
     print(x, y)
