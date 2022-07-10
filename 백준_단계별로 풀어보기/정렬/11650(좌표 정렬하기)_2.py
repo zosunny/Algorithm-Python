@@ -1,10 +1,11 @@
 import sys
+input = sys.stdin.readline
 
-total_num = int(input())
+n = int(input())
 xy_list = []
 
-for i in range(total_num):
-    xy = list(map(int, sys.stdin.readline().split()))
+for _ in range(n):
+    xy = list(map(int, input().split()))
     xy_list.append(xy)
 xy_list.sort()
 
