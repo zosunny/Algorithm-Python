@@ -9,7 +9,7 @@ card2 = list(map(int, input().split()))
 dic = {card2[i]: 0 for i in range(len(card2))}
 
 for j in range(n):
-    if card in dic.keys():
+    if card in dic.keys():      # card[j]를 빼먹음
         dic[card[j]] += 1
 
 for k in card2:
