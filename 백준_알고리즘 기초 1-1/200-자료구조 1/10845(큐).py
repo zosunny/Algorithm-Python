@@ -8,7 +8,7 @@ def pop():
     if len(q) == 0:
         return -1
     else:
-        return q.pop(0)
+        return q.pop(0)     # pop()이 아닌 pop(0)으로 앞 데이터 pop 가능
 
 def size():
     return len(q)
