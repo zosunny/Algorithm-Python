@@ -1,19 +1,25 @@
 import sys
+input = sys.stdin.readline
 
-stack_l = list(input())
-stack_r = []
-n = int(input())
-
-for i in range(n):
-    cmd = sys.stdin.readline().split()
-
-    if cmd[0] == "L" and stack_l:
-        stack_r.append(stack_l.pop())
-    elif cmd[0] == "D" and stack_r:
-        stack_l.append(stack_r.pop())
-    elif cmd[0] == "B" and stack_l:
-        stack_l.pop()
-    elif cmd[0] == "P":
-        stack_l.append(cmd[1])
-
-print("".join(stack_l + list(reversed(stack_r))))
+def shift_l():
+    return 0
+def shift_r():
+    return 0
+def del_l():
+    return 0
+def plus(x):
+    return 0
+n = list(input().rstrip())
+N = len(n)
+M = int(input())
+for _ in range(M):
+    order_list = list(input().rstrip().split())
+    order = order_list[0]
+    if order == "L":
+        shift_l()
+    elif order == "D":
+        shift_r()
+    elif order == "B":
+        del_l()
+    elif order == "P":
+        plus(order_list[1])
