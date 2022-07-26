@@ -1,42 +1,41 @@
-from collections import deque
 import sys
+from collections import deque
+input = sys.stdin.readline
 
-d = deque()
+dq = deque()
 n = int(input())
 
-for i in range(n):
-    command = sys.stdin.readline().split()
-
-    if command[0] == "push_front":
-        d.appendleft(command[1])
-    elif command[0] == "push_back":
-        d.append(command[1])
-    elif command[0] == "pop_front":
-        if d:
-            print(d[0])
-            d.popleft()
+for _ in range(n):
+    order_list = list(input().rstrip().split())
+    order = order_list[0]
+    if order == "push_front":
+        dq.appendleft(order_list[1])
+    elif order == "push_back":
+        dq.append(order_list[1])
+    elif order == "pop_front":
+        if dq:
+            print(dq.popleft())
         else:
-            print("-1")
-    elif command[0] == "pop_back":
-        if d:
-            print(d[len(d) - 1])
-            d.pop()
+            print(-1)
+    elif order == "pop_back":
+        if dq:
+            print(dq.pop())
         else:
-            print("-1")
-    elif command[0] == "size":
-        print(len(d))
-    elif command[0] == "empty":
-        if d:
-            print("0")
+            print(-1)
+    elif order == "size":
+        print(len(dq))
+    elif order == "empty":
+        if dq:
+            print(0)
         else:
-            print("1")
-    elif command[0] == "front":
-        if d:
-            print(d[0])
+            print(1)
+    elif order == "front":
+        if dq:
+            print(dq[0])
         else:
-            print("-1")
-    elif command[0] == "back":
-        if d:
-            print(d[len(d) - 1])
+            print(-1)
+    elif order == "back":
+        if dq:
+            print(dq[-1])
         else:
-            print("-1")
+            print(-1)
