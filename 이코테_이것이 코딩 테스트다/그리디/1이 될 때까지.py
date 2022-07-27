@@ -9,13 +9,13 @@ n, k = map(int, input().split())
 result = 0
 
 while True:
-    target = (n//k) * k
-    result += n - target
-    n = target
-    if n < k:
+    target = (n//k) * k         # k로 나누어 떨어지는 n에 가까운 수를 타겟으로 설정
+    result += n - target        # 타겟이 될때까지 -1한 횟수 더함
+    n = target                  # n = target 값으로 재설정
+    if n < k:                   # n이 k값보다 작아지면
         break
-    result += 1
     n //= k
+    result += 1
 
-result += (n-1)
+result += (n-1)                 # k보다 작은 n이 1이 될때까지 -1 연산한 횟수 더해
 print(result)
