@@ -10,13 +10,13 @@ n = int(input())                            # 모험가의 수
 data = list(map(int, input().split()))      # 공포도 입력받아 list로
 data.sort()                                 # 공포도 오름차순 정렬
 
-result = 0              # 총 그룹 수
+group = 0              # 총 그룹 수
 cnt = 0                 # 현재 그룹의 모험가 수
 
 for i in data:          # 공포도 순서대로 확인
     cnt += 1            # 모험가 수 +1
     if cnt >= i:        # 모험가 수 >= 공포도 가 되면
-        result += 1     # 그룹 수 +1
+        group += 1     # 그룹 수 +1
         cnt = 0         # 그룹 결정되었으니 모험가 수 초기화
 
-print(result)
+print(group)
