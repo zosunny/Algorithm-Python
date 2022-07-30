@@ -27,4 +27,4 @@ graph = [
 visited = [False] * 9   # 인덱스 0은 사용 X, 노드8개+1의 크기의 리스트
 
 # 정의된 DFS 함수 호출
-dfs(graph, 1, visited)
+dfs(graph, 1, visited)      # 출력: 1 2 7 6 8 3 4 5
