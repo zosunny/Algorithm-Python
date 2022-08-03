@@ -2,6 +2,7 @@ import sys
 input = sys.stdin.readline
 sys.setrecursionlimit(10000)        # 무한 재귀호출 방지
 
+# 상,하,좌,우 뿐만 아니라 대각선도 추가
 def dfs(x, y):
     if x < 0 or x >= w or y < 0 or y >= h:
         return False
