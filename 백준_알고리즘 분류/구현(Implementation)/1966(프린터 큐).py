@@ -9,7 +9,7 @@ for _ in range(tc):
     idx = deque(list(range(n)))                     # 인덱스
     cnt = 0
     while que:
-        if que[0] == max(que):      # 첫번째 요소가 최대값이면
+        if que[0] == max(que):      # 첫번째 요소가 최댓값이면
             cnt += 1                # 카운트
             que.popleft()           # pop
             if idx.popleft() == m:  # 인덱스가 m과 같을 때
