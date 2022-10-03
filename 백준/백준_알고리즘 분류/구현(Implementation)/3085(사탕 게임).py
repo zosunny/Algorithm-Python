@@ -44,3 +44,6 @@ for i in range(n):
             board[i][j], board[i+1][j] = board[i+1][j], board[i][j]
 
 print(ans)
+
+
+#https://velog.io/@yibangwon/백준-3085-사탕-게임-파이썬

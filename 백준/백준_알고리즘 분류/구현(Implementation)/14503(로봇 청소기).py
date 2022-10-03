@@ -35,3 +35,5 @@ while 1:
             break
         else:
             r, c = r-dx[d], c-dy[d]
+
+# https://resilient-923.tistory.com/164
