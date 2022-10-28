@@ -2,20 +2,29 @@ import sys
 input = sys.stdin.readline
 
 s = input().rstrip()
-s = s[::-1]
-
 stack = []
-ans = ""
+tmp = ""
+cnt = 0
+ans = 0
 
-for i in range(len(s)):
-    if s[i] == ")" or s[i-1] == "(":
-        continue
-    else:
-        if s[i] == "(":
-            stack.clear()
-            stack.append(ans * int(s[i + 1]))
-            ans = "".join(stack)
+for i in s:
+    if i == ")":
+        c, t = stack.pop()
+        if cnt == 0:
+            ans = ans * int(t) + c
         else:
-            ans = ans + s[i]
+            ans = cnt * int(t) + c
+            cnt = 0
 
-print(len(ans))
+    elif i == "(":
+        stack.append((cnt-1, tmp))
+        cnt = 0
+    else:
+        tmp = i
+        cnt += 1
+
+if ans == 0:
+    print(cnt)
+else:
+    print(ans)
+
