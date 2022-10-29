@@ -1,30 +1,22 @@
 import sys
 input = sys.stdin.readline
 
-s = input().rstrip()
-stack = []
-tmp = ""
-cnt = 0
-ans = 0
-
-for i in s:
-    if i == ")":
-        c, t = stack.pop()
-        if cnt == 0:
-            ans = ans * int(t) + c
+def cal(s, i, num):             # 문자열, 탐색위치, 곱할 수
+    leng = 0
+    while i < len(s):
+        if s[i] == "(":
+            leng -= 1
+            calcul, i = cal(s, i+1, int(s[i-1]))
+            leng += calcul
+        elif s[i] == ")":
+            return leng * num, i    # 각각 calcul, i의 값으로
         else:
-            ans = cnt * int(t) + c
-            cnt = 0
+            leng += 1
+        i += 1
+    return leng * num, i
 
-    elif i == "(":
-        stack.append((cnt-1, tmp))
-        cnt = 0
-    else:
-        tmp = i
-        cnt += 1
+def solution(s):
+    print(cal(s, 0, 1)[0])      # num만 반환
 
-if ans == 0:
-    print(cnt)
-else:
-    print(ans)
-
+if __name__ == '__main__':
+    solution(input().rstrip())
