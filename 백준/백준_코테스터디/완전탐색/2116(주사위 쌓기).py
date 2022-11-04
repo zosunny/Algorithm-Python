@@ -1,10 +1,12 @@
+import sys
+input = sys.stdin.readline
+
 n = int(input())
 dice = []
 for _ in range(n):
     dice.append(list(map(int, input().split())))
 pair = {0: 5, 1: 3, 2: 4, 3: 1, 4: 2, 5: 0}
 
-maxnum = 0                          # 최댓값
 ans = []
 for i in range(6):                  # 첫 번째 주사위 밑면 기준으로 반복
     max_side = []
