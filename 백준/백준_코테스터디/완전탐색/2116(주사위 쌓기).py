@@ -5,7 +5,7 @@ for _ in range(n):
 pair = {0: 5, 1: 3, 2: 4, 3: 1, 4: 2, 5: 0}
 
 maxnum = 0                          # 최댓값
-
+ans = []
 for i in range(6):                  # 첫 번째 주사위 밑면 기준으로 반복
     max_side = []
     tmp = [1, 2, 3, 4, 5, 6]
@@ -20,7 +20,6 @@ for i in range(6):                  # 첫 번째 주사위 밑면 기준으로 �
         tmp.remove(next)                                # 윗면 삭제
         max_side.append(max(tmp))                       # 옆면중 최댓값
     max_side = sum(max_side)                            # 각 주사위별 옆면의 최대값 합
-    if maxnum < max_side:
-        maxnum = max_side
+    ans.append(max_side)
 
-print(maxnum)
+print(max(ans))
