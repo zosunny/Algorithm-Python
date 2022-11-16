@@ -21,7 +21,7 @@ for t in range(T):
             r3.append(arr[i][j])
 
     print(f'#{t + 1}')
-    for x in range(0, N*N, N):
+    for x in range(0, N*N, N):          # N=3 일때 0, 3, 6에서 3개씩 출력하는 형태
         for y in range(N):
             print(r1[x+y], end="")
         print(end=" ")
