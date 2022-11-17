@@ -1,30 +1,17 @@
 import sys
 input = sys.stdin.readline
 
-N = int(input())
-M = int(input())
-if M == 0:
-    print(len(str(N)))
-else:
-    broken = list(map(int, input().split()))
+N = int(input())    # 이동할 채널
+M = int(input())    # 고장난 버튼 수
+broken = list(map(int, input().split()))    # 고장난 버튼
 
-    if N == 100:
-        print(0)
-    else:
-        ltsN = [int(x) for x in str(N)]
-        newN = []
-        for i in ltsN:
-            while True:
-                if i in broken:
-                    if i == 1:
-                        i -= 1
-                    else:
-                        i += 1
-                else:
-                    newN.append(i)
-                    break
-        print(newN)
-        print(ltsN)
-        ans = abs(int(''.join(map(str, newN))) - int(''.join(map(str, ltsN)))) + len(ltsN)
+minN = abs(100 - N)     # 최소 이동
 
-        print(ans)
+for i in range(1000000):    # 999999에서 이동 고려
+    num = str(i)
+    for j in range(len(num)):
+        if int(num[j]) in broken:
+            break
+        if j == len(num)-1:     # 끝자리까지 탈없이 왔음
+            minN = min(minN, abs(int(num)-N)+len(num))  # 최솟값 비교
+print(minN)
